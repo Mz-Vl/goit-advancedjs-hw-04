@@ -11,6 +11,8 @@ form.addEventListener('submit', onSearch);
 loadMoreBtn.addEventListener('click', fetchImages);
 loadMoreBtn.style.display = 'none';
 
+const lightbox = new SimpleLightbox('.gallery a');
+
 function onSearch(event) {
   event.preventDefault();
   currentQuery = event.currentTarget.elements.searchQuery.value.trim();
@@ -87,6 +89,6 @@ function renderGallery(images) {
 
   gallery.insertAdjacentHTML('beforeend', markup);
 
-  const lightbox = new SimpleLightbox('.gallery a');
+
   lightbox.refresh();
 }
